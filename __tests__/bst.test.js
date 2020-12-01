@@ -18,9 +18,29 @@ describe('binarySearchTree', () => {
   test('it should add a child node to the right side of the root node', () => {
     let bst= new BST();
     let rootNode = new BSTNode(36);
-    bst.insert(rootNode);
+    bst.insertNode(rootNode);
     let newNode = new BSTNode(22);
-    bst.insert(newNode);
+    bst.insertNode(newNode);
     expect(rootNode.left.data).toEqual(22);
   });
+
+  test('it should add a child node to the right side of the root node', () => {
+    let bst = new BST();
+    let rootNode = new BSTNode(36);
+    bst.insertNode(rootNode);
+    let newNode = new BSTNode(48);
+    bst.insertNode(newNode);
+    expect(rootNode.right.data).toEqual(48);
+  });
+
+  test('it should add a child to the left of the child node', () => {
+    let bst = new BST();
+    let rootNode = new BSTNode(36);
+    bst.insertNode(rootNode);
+    let node2 = new BSTNode(22);
+    bst.insertNode(node2);
+    let node3 = new BSTNode(11);
+    bst.insertNode(node3);
+    expect(rootNode.left.left.data).toEqual(11);
+  })
 });
