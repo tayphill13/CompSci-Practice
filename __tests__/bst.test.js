@@ -55,4 +55,22 @@ describe('binarySearchTree', () => {
     expect(rootNode.right.right.data).toEqual(73);
   });
 
+  test('it should add a child to the left of the right of the child node', () => {
+    let bst = new BST();
+    let rootNode = new BSTNode(36);
+    bst.insert(rootNode);
+    let node2 = new BSTNode(22);
+    bst.insert(node2);
+    let node3 = new BSTNode(33);
+    bst.insert(node3);
+    expect(rootNode.left.right.data).toEqual(33);
+  });
+
+  test('it should not add duplicate nodes', () => {
+    let bst = new BST();
+    let rootNode = new BSTNode(36);
+    bst.insert(rootNode);
+    let node2 = new BSTNode(36);
+    expect(bst.insert(node2)).toEqual({"root": {"data": 36, "left": null, "right": null}});
+  });
 });
