@@ -22,6 +22,8 @@ export default class BST {
           } else {
             currentNode = currentNode.right;
           }
+        } else {
+          return this;
         }
       }
     }
