@@ -2,7 +2,7 @@ export default class BST {
   constructor() {
     this.root = null;
   }
-  insert(insertedNode) {       // This function was previously called insertNode
+  insert(insertedNode) {       // This function was previously called insertNode because that's what it's doing.
     if (this.root === null) {
       this.root = insertedNode;
     } else {
