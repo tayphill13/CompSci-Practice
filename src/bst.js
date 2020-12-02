@@ -2,22 +2,26 @@ export default class BST {
   constructor() {
     this.root = null;
   }
-  insertNode(node) {
+  insert(insertedNode) {       // This function was previously called insertNode
     if (this.root === null) {
-      this.root = node;
-    }else {
+      this.root = insertedNode;
+    } else {
       let currentNode = this.root;
       while (true) {
-        if (currentNode.data > node.data) {
+        if (currentNode.data > insertedNode.data) {
           if (currentNode.left === null) {
-            currentNode.left = node;
+            currentNode.left = insertedNode;
             return this;
-          }else {
+          } else {
             currentNode = currentNode.left;
           }
-        }else if (currentNode.data < node.data) {
-          currentNode.right = node;
-          return this;
+        } else if (currentNode.data < insertedNode.data) {
+          if (currentNode.right === null) {
+            currentNode.right = insertedNode;
+            return this;
+          } else {
+            currentNode = currentNode.right;
+          }
         }
       }
     }
